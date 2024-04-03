@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task7/views/splash_screens/splash_screens.dart';
+import 'package:task7/views/homepage/homepage.dart';
 
 void main()  {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () => Get.offAll(SplashScreen()));
+    Timer(const Duration(seconds: 2), () => Get.offAll(const HomePage()));
   }
 
   // This widget is the root of your application.
