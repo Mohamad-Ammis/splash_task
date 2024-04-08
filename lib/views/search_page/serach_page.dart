@@ -10,35 +10,42 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF3F4F6),
       appBar: AppBar(
         scrolledUnderElevation: 0,
+        backgroundColor: Colors.white,
       ),
       body: Column(
         children: [
           const CustomSearchBar(),
-              GetBuilder<SearchPageController>(builder: (controller) {
-                  return controller.visibleProducts.isNotEmpty? Expanded(
+          GetBuilder<SearchPageController>(builder: (controller) {
+            return controller.visibleProducts.isNotEmpty
+                ? Expanded(
                     child: ListView.builder(
                         itemCount: controller.visibleProducts.length,
                         itemBuilder: (context, index) {
                           return SearchCard(
                               model: controller.visibleProducts[index]);
                         }),
-                  ):Expanded(
+                  )
+                : Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/images/empty_search.png'),
-                        const Text('Opps! We can’t find your product! ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),)
-                      ],
-                                      ),
+                        children: [
+                          Image.asset('assets/images/empty_search.png'),
+                          const Text(
+                            'Opps! We can’t find your product! ',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
                     ),
                   );
-                })
-
+          })
         ],
       ),
     );

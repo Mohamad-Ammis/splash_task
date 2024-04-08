@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () => Get.offAll(const HomePage()));
+    Timer(const Duration(seconds: 2), () => Get.offAll( HomePage()));
   }
 
   // This widget is the root of your application.

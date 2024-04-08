@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:task7/models/product_model.dart';
 
 class SearchCard extends StatelessWidget {
   const SearchCard({
-    super.key, required this.model,
+    super.key,
+    required this.model,
   });
   final ProductModel model;
   @override
@@ -14,10 +14,14 @@ class SearchCard extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width,
       padding: const EdgeInsets.all(16),
       clipBehavior: Clip.hardEdge,
-      decoration: const BoxDecoration(color: Colors.white),
+      decoration:  BoxDecoration(color: Colors.white,border: Border(bottom: BorderSide(color: Colors.grey.withOpacity(0.3),width: 0.4))),
       child: Row(
         children: [
-          Expanded(child: Image.network(model.image!,fit: BoxFit.contain,)),
+          Expanded(
+              child: Image.network(
+            model.image!,
+            fit: BoxFit.contain,
+          )),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -96,8 +100,9 @@ class SearchCard extends StatelessWidget {
                     ),
                   )
                 ],
-              )
-            ],
+              ),
+              
+            ]
           ),
         ],
       ),
